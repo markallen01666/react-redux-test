@@ -16,15 +16,15 @@ const App = props => {
     <div className="App" style={{ ...appStyle }}>
       <h1 style={{ ...bannerStyle }}>Basic demo app for playing with Redux</h1>
       <div style={{ ...boxStyle }}>
-        <button style={{ ...buttonStyle }} onClick={increment}>
-          +
+        <button style={{ ...buttonStyle }} onClick={decrement}>
+          -
         </button>
         <div style={{ ...textContainerStyle }}>
           <div style={{ ...scoreElement }}>Position:</div>
           <div style={{ ...scoreElement }}>{props.count}</div>
         </div>
-        <button style={{ ...buttonStyle }} onClick={decrement}>
-          -
+        <button style={{ ...buttonStyle }} onClick={increment}>
+          +
         </button>
       </div>
       <div style={{ ...boxStyle }}>

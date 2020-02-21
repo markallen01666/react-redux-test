@@ -44,17 +44,15 @@ function reducer(state = initialState, action) {
     case "INCREMENT":
       if (state.count >= 26) return { count: 1, alphabet: state.alphabet };
       else
-        return {
-          count: state.count + 1,
-          alphabet: state.alphabet
-        };
+        return (Object.assign({}, state, {
+          count: state.count + 1
+        }));          
     case "DECREMENT":
       if (state.count <= 1) return { count: 26, alphabet: state.alphabet };
       else
-        return {
-          count: state.count - 1,
-          alphabet: state.alphabet
-        };
+      return (Object.assign({}, state, {
+        count: state.count - 1
+      }));
     default:
       return state;
   }
