@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import "./App.css";
+import Card from "./components/Card";
 
 const App = props => {
   // change count value in Redux store on button click
@@ -30,9 +31,12 @@ const App = props => {
       <div style={{ ...boxStyle }}>
         <div style={{ ...textContainerStyle }}>
           <div style={{ ...scoreElement }}>Letter of alphabet:</div>
-          <div style={{ ...scoreElement }}>{props.alphabet[props.count - 1]}</div>
+          <div style={{ ...scoreElement }}>
+            {props.alphabet[props.count - 1]}
+          </div>
         </div>
       </div>
+      <Card />
     </div>
   );
 };
@@ -54,6 +58,7 @@ const boxStyle = {
   justifyContent: "space-around",
   flex: 1,
   margin: 50,
+  marginTop: 10,
   borderWidth: 2,
   borderColor: "#000000",
   padding: 50,
