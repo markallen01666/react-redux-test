@@ -36,23 +36,57 @@ const initialState = {
     "X",
     "Y",
     "Z"
+  ],
+  COLORS: [
+    "#FF5733",
+    "#CAFF33",
+    "#33C4FF",
+    "#FF3371",
+    "#3FFF33",
+    "#FCFF33",
+    "#33FFB5",
+    "#FF33F0",
+    "#FF3C33",
+    "#C433FF",
+    "#33F6FF",
+    "#262B74",
+    "#4B7426",
+    "#267449",
+    "#742666",
+    "#744F26",
+    "#677426",
+    "#A5F1AC",
+    "#AAA5F1",
+    "#F1A5E4",
+    "#F1A5B1",
+    "#DEE63B",
+    "#4B3BE6",
+    "#74E63B",
+    "#E69E3B",
+    "#3BE6E1"
   ]
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT":
-      if (state.count >= 26) return { count: 1, alphabet: state.alphabet };
+      if (state.count >= 26)
+        return Object.assign({}, state, {
+          count: 1
+        });
       else
-        return (Object.assign({}, state, {
+        return Object.assign({}, state, {
           count: state.count + 1
-        }));          
+        });
     case "DECREMENT":
-      if (state.count <= 1) return { count: 26, alphabet: state.alphabet };
+      if (state.count <= 1)
+        return Object.assign({}, state, {
+          count: 26
+        });
       else
-      return (Object.assign({}, state, {
-        count: state.count - 1
-      }));
+        return Object.assign({}, state, {
+          count: state.count - 1
+        });
     default:
       return state;
   }
